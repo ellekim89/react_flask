@@ -21,4 +21,4 @@ def stuff():
 
   return json.dumps(stuff)
 
-app.run(debug=True)
+app.run(debug=True, port=3000)
