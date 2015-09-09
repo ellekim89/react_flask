@@ -33,9 +33,12 @@ module.exports = React.createClass({
   },
 
   render: function(){
+    var image = this.state.results.image || 'http://38.media.tumblr.com/9f98c9041a3d98c8153423a130cd9367/tumblr_n9k9zzmzqZ1tre1zbo1_500.gif';
+    var divStyle ={
+      backgroundImage: 'url(' + image + ')'
+    };
     return (
-      <div>
-        <h1>Hello from react</h1>
+      <div className="background" style={divStyle}>
         <SearchForm search={this.getAnswer} />
         <Answer response={this.state.results}/>
       </div>

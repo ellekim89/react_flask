@@ -4,11 +4,11 @@ var React = require('react');
 module.exports = React.createClass({displayName: "exports",
   render: function(){
 
+
     return (
       React.createElement("div", null, 
-        React.createElement("h1", null, this.props.response.answer), 
-        React.createElement("img", {src: this.props.response.image, alt: ""})
-      ) 
+        React.createElement("h1", {id: "answer"}, this.props.response.answer)
+      )
     )
   }
 });
@@ -49,9 +49,12 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   render: function(){
+    var image = this.state.results.image || 'http://38.media.tumblr.com/9f98c9041a3d98c8153423a130cd9367/tumblr_n9k9zzmzqZ1tre1zbo1_500.gif';
+    var divStyle ={
+      backgroundImage: 'url(' + image + ')'
+    };
     return (
-      React.createElement("div", null, 
-        React.createElement("h1", null, "Hello from react"), 
+      React.createElement("div", {className: "background", style: divStyle}, 
         React.createElement(SearchForm, {search: this.getAnswer}), 
         React.createElement(Answer, {response: this.state.results})
       )
@@ -73,9 +76,11 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function(){
     return (
-      React.createElement("form", {onSubmit: this.update}, 
-        React.createElement("input", {ref: "textInput", type: "text", name: "q"}), 
-        React.createElement("input", {type: "submit"})
+      React.createElement("div", {className: "navbar"}, 
+        React.createElement("form", {id: "searchForm", onSubmit: this.update}, 
+          React.createElement("input", {ref: "textInput", type: "text", name: "q"}), 
+          React.createElement("input", {type: "submit"})
+        )
       )
     )
   }

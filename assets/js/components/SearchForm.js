@@ -11,10 +11,12 @@ module.exports = React.createClass({
 
   render: function(){
     return (
-      <form onSubmit={this.update}>
-        <input ref="textInput" type="text" name="q" />
-        <input type="submit" />
-      </form>
+      <div className="navbar">
+        <form id="searchForm" onSubmit={this.update}>
+          <input ref="textInput" type="text" name="q" />
+          <input type="submit" />
+        </form>
+      </div>
     )
   }
 });
