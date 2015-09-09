@@ -1,5 +1,5 @@
 import json
-from flask import Flask
+from flask import Flask, request, url_for
 
 app = Flask(__name__)
 
@@ -11,14 +11,10 @@ def index():
 def static_path(path):
   return app.send_static_file(path)
 
-@app.route('/stuff')
-def stuff():
-  stuff = {
-    'artist1': 'Red Hot Chili Peppers',
-    'artist2': 'Vampire Weekend',
-    'artist3': 'Chicago'
-  }
-
-  return json.dumps(stuff)
+@app.route('/lifedecision')
+def api():
+  url = requests.get('http://yesno.wtf/api')
+  api = json.dumps(url.json())
+  return api
 
 app.run(debug=True)
