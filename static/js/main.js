@@ -3,7 +3,7 @@ var React = require('react');
 
 module.exports = React.createClass({displayName: "exports",
   render: function(){
-
+    
     return (
       React.createElement("div", null, 
         React.createElement("h1", null, this.props.response.answer), 
@@ -66,15 +66,16 @@ module.exports = React.createClass({displayName: "exports",
 
   update: function(e){
     e.preventDefault();
-    var query = this.refs.textInput.getDOMNode().value;
+    // var query = this.refs.textInput.getDOMNode().value;
     // this.props.search(query);
+    this.refs.textInput.getDOMNode().value = "";
     this.props.search();
   },
 
   render: function(){
     return (
       React.createElement("form", {onSubmit: this.update}, 
-        React.createElement("input", {ref: "textInput", type: "text", name: "q"}), 
+        React.createElement("input", {placeholder: "Enter a yes/no question", ref: "textInput", type: "text", name: "q"}), 
         React.createElement("input", {type: "submit"})
       )
     )
