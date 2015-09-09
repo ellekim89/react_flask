@@ -5,7 +5,7 @@ module.exports = React.createClass({displayName: "exports",
   render: function(){
 
     return (
-      React.createElement("div", null,
+      React.createElement("div", null, 
         React.createElement("h1", {id: "answer"}, this.props.response.answer)
       )
     )
@@ -53,8 +53,8 @@ module.exports = React.createClass({displayName: "exports",
       backgroundImage: 'url(' + image + ')'
     };
     return (
-      React.createElement("div", {className: "background", style: divStyle},
-        React.createElement(SearchForm, {search: this.getAnswer}),
+      React.createElement("div", {className: "background", style: divStyle}, 
+        React.createElement(SearchForm, {search: this.getAnswer}), 
         React.createElement(Answer, {response: this.state.results})
       )
     )
@@ -76,18 +76,13 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function(){
     return (
-<<<<<<< HEAD
-      React.createElement("div", {className: "navbar"},
-        React.createElement("form", {id: "searchForm", onSubmit: this.update},
-          React.createElement("input", {ref: "textInput", type: "text", name: "q"}),
+      React.createElement("div", {className: "navbar"}, 
+        React.createElement("form", {id: "searchForm", onSubmit: this.update}, 
+          React.createElement("input", {placeholder: "Enter a yes/no question", ref: "textInput", type: "text", name: "q"}), 
           React.createElement("input", {type: "submit"})
         )
-=======
-      React.createElement("form", {onSubmit: this.update},
-        React.createElement("input", {placeholder: "Enter a yes/no question", ref: "textInput", type: "text", name: "q"}),
-        React.createElement("input", {type: "submit"})
->>>>>>> 0ec807f02b80c9fefeaf7ae470f5c29ec8f2752c
       )
+
     )
   }
 });
