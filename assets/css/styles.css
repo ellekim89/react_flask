@@ -1,3 +1,40 @@
-body{
-  background: blue;
+@font-face{
+  font-family: CodeLight;
+  src: local("Code Light"),
+        local("Code Light")
+        url(MgOpenModernaBold.ttf);
 }
+
+
+#container{
+  min-height: 100%;
+  min-width: auto;
+}
+.navbar{
+  height: 50px;
+  background-color: rgba(0,0,0,.5);
+  color: #FFFFFF;
+}
+.background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#searchForm{
+  margin-left: 30px;
+  padding-top: 20px;
+}
+#answer{
+  position: absolute;
+  color: rgba(255,255,255,.7);
+  font-size: 240px;
+  font-family: CodeLight;
+
+}
+
