@@ -14,9 +14,10 @@ module.exports = React.createClass({
     return (
       <div className="navbar">
         <form id="searchForm" onSubmit={this.update}>
-          <input placeholder="Enter a yes/no question" ref="textInput" type="text" name="q" />
-          <input type="submit" />
+          <input id="searchField" placeholder="Enter a yes/no question" ref="textInput" type="text" name="q" />
+          <button id="searchButton" type="submit">Ask</button>
         </form>
+
       </div>
 
     )

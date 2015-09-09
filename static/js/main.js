@@ -77,10 +77,17 @@ module.exports = React.createClass({displayName: "exports",
   render: function(){
     return (
       React.createElement("div", {className: "navbar"}, 
+<<<<<<< HEAD
         React.createElement("form", {id: "searchForm", onSubmit: this.update}, 
           React.createElement("input", {placeholder: "Enter a yes/no question", ref: "textInput", type: "text", name: "q"}), 
           React.createElement("input", {type: "submit"})
         )
+=======
+          React.createElement("form", {id: "searchForm", onSubmit: this.update}, 
+            React.createElement("input", {id: "searchField", ref: "textInput", type: "text", name: "q"}), 
+            React.createElement("button", {id: "searchButton", type: "submit"}, "ask")
+          )
+>>>>>>> stevenaldous-master
       )
 
     )
