@@ -1,4 +1,5 @@
 import json
+import requests
 from flask import Flask
 
 app = Flask(__name__)
@@ -18,7 +19,6 @@ def stuff():
     'artist2': 'Vampire Weekend',
     'artist3': 'Chicago'
   }
-
   return json.dumps(stuff)
 
-app.run(debug=True, port=3000)
+app.run(debug=True)
