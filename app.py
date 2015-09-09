@@ -19,4 +19,8 @@ def api():
   api = json.dumps(url.json())
   return api
 
+@app.route('/about')
+def about():
+  return app.send_static_file('about.html')
+
 app.run(debug=True)
