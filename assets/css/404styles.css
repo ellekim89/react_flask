@@ -1,0 +1,16 @@
+body{
+  background-image: url('http://cdn.theatlantic.com/assets/media/img/photo/2012/05/75-years-since-the-hindenburg-disaster/h22_hbgpat01/main_900.gif?GE2DEMBVGY4DIOBQFYYA====');
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+#header{
+  position: absolute;
+  color: rgba(255,255,255,.9);
+  font-size: 200px;
+  font-family: Roboto;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-right: 20px;
+}

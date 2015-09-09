@@ -1,6 +1,6 @@
 import json
 import requests
-from flask import Flask, request, url_for
+from flask import Flask, request, url_for,render_template
 
 
 app = Flask(__name__)
@@ -19,8 +19,8 @@ def api():
   api = json.dumps(url.json())
   return api
 
-@app.route('/about')
-def about():
-  return app.send_static_file('about.html')
+@app.errorhandler(404)
+def page_not_found(e):
+  return app.send_static_file('404.html'),404
 
 app.run(debug=True)
