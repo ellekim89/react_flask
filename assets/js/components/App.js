@@ -1,9 +1,17 @@
 var React = require('react');
 var SearchForm = require('./SearchForm');
+var Answer = require('./Answer');
+
 
 module.exports = React.createClass({
 
+  getInitialState: function(){
+    return {results: ""};
+  },
+
   getAnswer: function(){
+
+    var self = this;
     // open request
     var request = new XMLHttpRequest();
 
@@ -14,7 +22,8 @@ module.exports = React.createClass({
     request.onload = function(){
         if (request.status >= 200 && request.status < 400) {
             var data = JSON.parse(request.responseText);
-            console.log("successful responose", data);
+            console.log("successful response", data);
+            self.setState({results: data});
         } else {
             console.log("hit server, but there was an error");
         }
@@ -28,6 +37,7 @@ module.exports = React.createClass({
       <div>
         <h1>Hello from react</h1>
         <SearchForm search={this.getAnswer} />
+        <Answer response={this.state.results}/>
       </div>
     )
   }
