@@ -17,7 +17,6 @@ module.exports = React.createClass({
           <input id="searchField" placeholder="Enter a yes/no question" ref="textInput" type="text" name="q" />
           <button id="searchButton" type="submit">Ask</button>
         </form>
-
       </div>
 
     )

@@ -81,7 +81,6 @@ module.exports = React.createClass({displayName: "exports",
           React.createElement("input", {id: "searchField", placeholder: "Enter a yes/no question", ref: "textInput", type: "text", name: "q"}), 
           React.createElement("button", {id: "searchButton", type: "submit"}, "Ask")
         )
-
       )
 
     )
